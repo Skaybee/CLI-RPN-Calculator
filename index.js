@@ -1,8 +1,7 @@
-import * as readline from 'node:readline';
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const readline = require('readline');
+const rl = readline.createInterface(
+  process.stdin, process.stdout
+);
 
 function operation (op,a,b) {
   switch(op) {
@@ -37,3 +36,5 @@ rl.on('line', data => {
   console.log('You\'re now exiting the RPN Calculator!')
   process.exit(0);
 });
+
+module.exports = { operation };
